@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppMétéo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><div class="fullscreen">
+    <video class="video" muted defaultMuted autoplay loop></video>
+    <div class="weatherForecast">
+        <div class="currentWeather"></div>
+        <div class="forecastDay">
+        </div>
+        <div class="forecastDay">
+        </div>
+        <div class="forecastDay">
+        </div>
+        <div class="forecastDay">
+        </div>
+        <div class="forecastDay">
+        </div>
+        <div class="change">
+            <form class="changeCity">
+                <select name="city" id="city">
+                    <option value="------">----------Historique----------</option>
+                    <option value="2987914">Perpignan</option>
+                </select>
+                <input type="number" name="cityId" id="cityId">
+                <button id="button">Choisir</button>
+            </form>
+                
+        </div>
+    </div>
+</div>
+        
+ 
+   
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
