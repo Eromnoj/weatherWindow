@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AppMétéo</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body><div class="fullscreen">
-    <video class="video" muted defaultMuted autoplay loop></video>
-    <div class="weatherForecast">
-        <div class="currentWeather"></div>
-        <div class="forecastDay">
+
+<body>
+    <div class="fullscreen">
+        <video class="video" muted defaultMuted autoplay loop></video>
+        <div class="weatherForecast">
+            <div class="currentWeather"></div>
+            <div class="forecastDay day1">
+            </div>
+            <div class="forecastDay day2">
+            </div>
+            <div class="forecastDay day3">
+            </div>
+            <div class="forecastDay day4">
+            </div>
+            <div class="forecastDay day5">
+            </div>
         </div>
-        <div class="forecastDay">
-        </div>
-        <div class="forecastDay">
-        </div>
-        <div class="forecastDay">
-        </div>
-        <div class="forecastDay">
+        <div class="change">
+            <form class="changeCity">
+                <select name="city" id="city">
+                    <option value="------">Historique</option>
+                    <option value="2987914">Perpignan</option>
+                </select>
+                <input type="number" name="cityId" id="cityId">
+                <button id="button">Choisir</button>
+            </form>
+
+            <button id ="openModal">instruction</button>
         </div>
     </div>
-    <div class="change">
-        <form class="changeCity">
-            <select name="city" id="city">
-                <option value="------">Historique</option>
-                <option value="2987914">Perpignan</option>
-            </select>
-            <input type="number" name="cityId" id="cityId">
-            <button id="button">Choisir</button>
-        </form>
-            
+
+    <div class="instruction">
+        <div class="instrucBloc">
+            <h3>Comment ça marche ?</h3>
+            <p>Rendez-vous sur le site <a href="https://openweathermap.org/">OpenWeatherMap</a></p>
+            <p>Cherchez votre ville dans le formulaire de recherche du site</p>
+            <p>Recupérez l'ID dans la barre d'adresse</p>
+            <p>Exemple :<code> https://openweathermap.org/city/<strong>3410315</strong></code></p>
+            <p>Collez cet ID dans l'input, et accéder à la météo de votre ville</p>
+            <button id="closeModal">Continuer</button>
+        </div>
     </div>
-</div>
-        
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.2/dayjs.min.js" integrity="sha512-Ot7ArUEhJDU0cwoBNNnWe487kjL5wAOsIYig8llY/l0P2TUFwgsAHVmrZMHsT8NGo+HwkjTJsNErS6QqIkBxDw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.2/locale/fr.min.js" integrity="sha512-GdNlwQyB8z0UkoyjhFaBRNQ6aoIVAwczI5aNTXOU7OHRa6fT+ePEizpkjkzms9aOKpboUD2p7qQ7vY0rwVufkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.2/dayjs.min.js"
+        integrity="sha512-Ot7ArUEhJDU0cwoBNNnWe487kjL5wAOsIYig8llY/l0P2TUFwgsAHVmrZMHsT8NGo+HwkjTJsNErS6QqIkBxDw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.2/locale/fr.min.js"
+        integrity="sha512-GdNlwQyB8z0UkoyjhFaBRNQ6aoIVAwczI5aNTXOU7OHRa6fT+ePEizpkjkzms9aOKpboUD2p7qQ7vY0rwVufkA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="scripts/main.js"></script>
 </body>
+
 </html>

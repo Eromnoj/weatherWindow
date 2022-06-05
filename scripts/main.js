@@ -6,6 +6,9 @@ const form = document.querySelector('.changeCity')
 const city = document.querySelector('#city')
 const video = document.querySelector('.video')
 const cityInput = document.querySelector('#cityId')
+const closeModal = document.querySelector('#closeModal')
+const openModal = document.querySelector('#openModal')
+const instruction = document.querySelector('.instruction')
 let currentWeather = {}
 let forecast = []
 
@@ -25,10 +28,10 @@ const createForcast = () => {
     <div class="city cell"><h2>${currentWeather.city}</h2></div>`
 
     forecast.forEach((e, index) => {
-      forecastDisplay[index].innerHTML = `<div class="littleIcon"><img src="ressources/icons/${e.icon}.svg" alt=""></div>
+      forecastDisplay[index].innerHTML = `<div class="date mincell"><h4>${e.date}</h2></div>
+      <div class="littleIcon"><img src="ressources/icons/${e.icon}.svg" alt=""></div>
       <div class="littleTemp mincell"><p>${e.temperature}</p></div>
-      <div class="littleWeather mincell"><p>${e.weather}</p></div>
-      <div class="date mincell"><h4>${e.date}</h2></div>`
+      <div class="littleWeather mincell"><p>${e.weather}</p></div>`
     })
   }, 500)
 
@@ -97,4 +100,10 @@ form.addEventListener('submit', e => {
   getData(cityInput.value)
 })
 
+closeModal.addEventListener('click', () => {
+  instruction.style.display = 'none'
+})
 
+openModal.addEventListener('click', () => {
+  instruction.style.display = 'flex'
+})
