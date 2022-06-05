@@ -59,7 +59,7 @@ const history = (parent, value) => { //fonction pour constituer un historique de
 }
 
 const getData = (cityId = '2987914') => { //fonction qui récupère les données depuis l'API de openweathermap avec Fetch() en fonction de l'ID de la ville 
-  fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&units=metric&lang=fr&appid=71364b0781d03bc97f495d5722900a5e`)
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&units=metric&lang=fr&appid=71364b0781d03bc97f495d5722900a5e`)
     .then(response => { return response.json() })
     .then(data => {
       currentWeather = {// on remplit l'objet currentWeather avec les données récupérées
