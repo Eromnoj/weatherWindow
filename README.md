@@ -20,7 +20,8 @@ https://openweathermap.org/city/3469058
 
 ## To-Do
 
-* add instruction on the page
+* ~~add instruction on the page~~
 * change weather icon
 * work on design
 * maybe buy some videos to get rid of the shutterstosk watermark
+* get a One Call API from openweathermap
