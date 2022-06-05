@@ -1,0 +1,93 @@
+*,
+::before,
+::after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body
+  font-family: Arial, Helvetica, sans-serif
+  color: #f1f1f1
+  height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  overflow: hidden
+
+.weatherForecast
+  display: grid
+  grid-template-areas: "current current current current current" "current current current current current" "day1 day2 day3 day4 day5"
+  position: absolute
+  left: 20px
+  bottom: 20px
+
+.currentWeather
+  grid-area: current
+  width: 100%
+  height: 400px
+  display: grid
+  grid-template-areas: "temp" "weather" "city"
+
+
+.cell
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  font-size: 25px
+
+.bigTemp,
+.bigWeather
+  font-weight: bold
+
+.fullscreen
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+
+.fullscreen .video
+  margin: auto
+  height: 100%
+  width: 177.77777778vh /* 100 * 16 / 9 */
+  min-width: 100%
+  min-height: 56.25vw /* 100 * 9 / 16 */
+
+.forecastDay
+  width: 200px
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+.changeCity
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+
+#city,
+#cityId,
+#button
+  width: 200px
+  height: 50px
+  margin: 2px
+  background: white
+  border: 2px solid pink
+  border-radius: 10px
+  color: pink
+  font-weight: bold
+  font-size: 1.4em
+  text-align: center
+
+.change
+  position: absolute
+  top: 20px
+  right: 20px
+  opacity: 0.3
+  transition: opacity 0.4s
+
+.change:hover
+  opacity: 1

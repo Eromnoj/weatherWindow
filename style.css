@@ -1,86 +1,152 @@
-*, ::before, ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #f1f1f1;
-    background: linear-gradient(45deg, rgb(59,50,50), rgb(22,28,29));
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f1f1f1;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
 }
 
 .weatherForecast {
-    display: grid;
-    grid-template-areas: 
-    "current current current current current current"
-    "current current current current current current"
-    "day1 day2 day3 day4 day5 change";
-    position: absolute;
-    left : 20px;
-    bottom: 20px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "current current current current current" "current current current current current" "day1 day2 day3 day4 day5";
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
 }
 
 .currentWeather {
-    grid-area: current;
-    width: 100%;
-    height: 400px;
-    display: grid;
-    grid-template-areas: 
-    "temp"
-    "weather"
-    "city";
-}
-
-
-.bigIcon img{
-    width: 80%;
-    height: 80%;
-    margin: auto;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: current;
+  width: 100%;
+  height: 400px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "temp" "weather" "city";
 }
 
 .cell {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 25px;
 }
 
 .bigTemp,
 .bigWeather {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .fullscreen {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
 }
 
-.fullscreen video {
-    margin:auto;
-}
-.forecastDay { 
-    width: 200px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.fullscreen .video {
+  margin: auto;
+  height: 100%;
+  width: 177.77778vh;
+  min-width: 100%;
+  min-height: 56.25vw;
 }
 
-.video {
-    height: 100%;
-    width: 177.77777778vh; /* 100 * 16 / 9 */
-    min-width: 100%;
-    min-height: 56.25vw; /* 100 * 9 / 16 */
+.forecastDay {
+  width: 200px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+.changeCity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#city,
+#cityId,
+#button {
+  width: 200px;
+  height: 50px;
+  margin: 2px;
+  background: white;
+  border: 2px solid pink;
+  border-radius: 10px;
+  color: pink;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.change {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0.3;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.change:hover {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

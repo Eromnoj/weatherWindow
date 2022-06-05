@@ -61,15 +61,15 @@ const getData = (cityId = '2987914') => {
       currentWeather = {
         city: data.city.name,
         temperature: formatTemp(data.list[0].main.temp),
-        weather: data.list[0].weather[0].main,
+        weather: data.list[0].weather[0].description,
         icon: data.list[0].weather[0].icon
       }
       for (let i = 0; i < data.list.length; i++) {
         if (data.list[i].dt % 86400 === 43200) {
           forecast.push({
-            date: new Date(data.list[i].dt_txt).toDateString(),
+            date: dayjs(data.list[i].dt_txt).locale('fr').format('D MMM YYYY'),
             temperature: formatTemp(data.list[i].main.temp),
-            weather: data.list[i].weather[0].main,
+            weather: data.list[i].weather[0].description,
             icon: data.list[i].weather[0].icon
           })
         }
@@ -83,7 +83,6 @@ const getData = (cityId = '2987914') => {
       getData()
     })
 }
-
 
 getData()
 
